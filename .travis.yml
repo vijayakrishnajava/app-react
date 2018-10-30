@@ -3,5 +3,14 @@ services:
   - docker
 before_install:
   - docker build -t app-react -f Dockerfile.dev .
-script:
-  - docker run app-react npm run test -- --coverage
+deploy:
+  provider: elasticbeanstack
+  region: us-west-1
+  app: app-react
+  env: AppRedis-env
+  bucket_name: elasticbeanstalk-us-west-1-539724223970
+  bucket_path: app-react
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
