@@ -1,7 +1,7 @@
 FROM node:alpine as build
 WORKDIR /app-redis
 
-COPY ./package.json .
+COPY ./*package.json ./
 
 RUN npm install
 

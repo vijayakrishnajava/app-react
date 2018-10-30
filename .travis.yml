@@ -3,7 +3,9 @@ services:
   - docker
   
 script:
-  - echo "hello"  
+  - echo "hello"
+  - echo "testing start"
+  - docker build -t app-redis -f Dockerfile.dev .
 
 deploy:
   provider: elasticbeanstalk
