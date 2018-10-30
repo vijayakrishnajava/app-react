@@ -5,12 +5,13 @@ before_install:
   - docker build -t app-react -f Dockerfile.dev .
 deploy:
   provider: elasticbeanstack
-  region: us-west-1
-  app: app-react
-  env: AppRedis-env
-  bucket_name: elasticbeanstalk-us-west-1-539724223970
-  bucket_path: app-react
+  region: "us-west-1"
+  app: "app-react"
+  env: "AppRedis-env"
+  bucket_name: "elasticbeanstalk-us-west-1-539724223970"
+  bucket_path: "app-react"
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
