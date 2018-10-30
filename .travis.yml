@@ -8,7 +8,7 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-west-1"
-  app: "app-react"
+  app: "app-redis"
   env: "AppRedis-env"
   bucket_name: "elasticbeanstalk-us-west-1-539724223970"
   bucket_path: "app-react"
