@@ -1,8 +1,9 @@
 sudo: required
 services:
   - docker
+
 deploy:
-  provider: elasticbeanstack
+  provider: elasticbeanstalk
   region: "us-west-1"
   app: "app-react"
   env: "AppRedis-env"
